@@ -32,13 +32,21 @@ const HeaderCartButton = (props) => {
   }, [items]);
 
   return (
-    <button className={btnClasses} onClick={props.onClick}>
-      <span className={classes.icon}>
-        <CartIcon />
-      </span>
-      <span>Your Cart</span>
-      <span className={classes.badge}>{numberOfCartItems}</span>
-    </button>
+    <>
+      <button className={btnClasses} onClick={props.onClick}>
+        <span className={classes.icon}>
+          <CartIcon />
+        </span>
+        <span>Your Cart</span>
+        <span className={classes.badge}>{numberOfCartItems}</span>
+      </button>
+      <div className={classes.buttomMWrapper} onClick={props.onClick}>
+        <span className={classes.buttonMobile}>
+          <CartIcon />
+        </span>
+        <span className={classes.badge}>{numberOfCartItems}</span>
+      </div>
+    </>
   );
 };
 
